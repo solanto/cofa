@@ -8,6 +8,7 @@
         "dev": "concurrently \"gulp watch\" \"npx @11ty/eleventy --serve\"",
         "serve": "npx @11ty/eleventy --serve",
         "serve-incremental": "npx @11ty/eleventy --serve --incremental",
+        "simple-serve": "browser-sync start -s _site -w",
         "build": "gulp build-sass && npx @11ty/eleventy",
         "refresh": "npx @11ty/eleventy",
         "clean": "rimraf _site/"
@@ -17,6 +18,7 @@
     "devDependencies": {
         "@11ty/eleventy": "^0.12.1",
         "autoprefixer": "^10.2.5",
+        "browser-sync": "^2.26.14",
         "gulp": "^4.0.2",
         "gulp-postcss": "^9.0.0",
         "gulp-rename": "^2.0.0",
@@ -24,8 +26,10 @@
         "gulp-sass": "^4.1.0",
         "gulp-sourcemaps": "^3.0.0",
         "gulp-svg-sprite": "^1.5.0",
+        "http-server": "^0.12.3",
         "postcss": "^8.2.15",
         "postcss-csso": "^5.0.1",
+        "rimraf": "^3.0.2",
         "sass": "^1.32.13",
         "uswds": "^2.11.2",
         "uswds-gulp": "github:uswds/uswds-gulp"
@@ -33,6 +37,7 @@
     "dependencies": {
         "concurrently": "^6.1.0",
         "eleventy-plugin-sass": "^1.2.0",
-        "js-yaml": "^3.14.1"
+        "js-yaml": "^3.14.1",
+        "node-fetch": "^2.6.1"
     }
 }

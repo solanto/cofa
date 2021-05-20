@@ -1,0 +1,68 @@
+---
+layout: default
+---
+
+<section id="tabla" class="grid-container">
+    <div class="usa-table-container--scrollable">
+        <table class="usa-table usa-table--compact usa-table--stacked-header usa-table--borderless">
+            <caption>Sortable borderless table with various content types</caption>
+            <thead>
+                <tr>
+                    <th data-sortable scope="col" role="columnheader">
+                        Nombre
+                    </th>
+                    <th data-sortable scope="col" role="columnheader">
+                        Partido
+                    </th>
+                    <th data-sortable scope="col" role="columnheader">
+                        Representación
+                    </th>
+                    <th data-sortable scope="col" role="columnheader">
+                        Distrito Eletoral
+                    </th>
+                    <th data-sortable scope="col" role="columnheader">
+                        Municipio
+                    </th>
+                    <th data-sortable scope="col" role="columnheader">
+                        Teléfono
+                    </th>
+                    <th data-sortable scope="col" role="columnheader">
+                        Correo
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                {% assign representatives = dummy-data %}
+
+                {% for rep in representatives %}
+                <tr>
+                    <th scope="row">{{ rep.nombre.nombre }} {{ rep.nombre.apellidos }}</th>
+                    <td data-sort-value="{{ rep.partido }}">{{ rep.partido }}</td>
+                    <td data-sort-value="{{ rep.representacion }}">{{ rep.representacion }}</td>
+                    <td data-sort-value="{{ rep.distrito }}">{{ rep.distrito }}</td>
+                    <td data-sort-value="{{ rep.municipio }}">{{ rep.municipio }}</td>
+
+
+                    {% capture telefono %}
+                    {{ rep.telefono.numero }} ext. {{ rep.telefono.extension }}
+                    {% endcapture %}
+
+                    <td data-sort-value="{{ telefono }}">
+                        <a href="tel:{{ rep.telefono.numero }},{{ rep.telefono.extension }}" class="usa-link">
+                        {{ telefono }}
+                        </a>
+                    </td>
+
+                    
+                    <td data-sort-value="{{ rep.correo }}">
+                        <a href="mailto:{{ rep.correo }}" class="usa-link">
+                        {{ rep.correo }}
+                        </a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <div class="usa-sr-only usa-table__announcement-region" aria-live="polite"></div>
+    </div>
+</section>
