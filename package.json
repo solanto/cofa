@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "concurrently \"gulp watch\" \"npx @11ty/eleventy --serve\""
+    "dev": "concurrently \"gulp watch\" \"npx @11ty/eleventy --serve\"",
+    "serve": "npx @11ty/eleventy --serve",
+    "serve-incremental": "npx @11ty/eleventy --serve --incremental",
+    "build": "npx @11ty/eleventy"
   },
   "author": "Andrew Solanto",
   "license": "MIT",
