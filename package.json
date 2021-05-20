@@ -1,38 +1,38 @@
 {
-  "name": "cofa",
-  "version": "1.0.0",
-  "description": "frontend demo for cabild(e)o",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "concurrently \"gulp watch\" \"npx @11ty/eleventy --serve\"",
-    "serve": "npx @11ty/eleventy --serve",
-    "serve-incremental": "npx @11ty/eleventy --serve --incremental",
-    "build": "gulp build-sass && npx @11ty/eleventy",
-    "refresh": "npx @11ty/eleventy",
-    "clean": "rimraf _site/"
-  },
-  "author": "Andrew Solanto",
-  "license": "MIT",
-  "devDependencies": {
-    "@11ty/eleventy": "^0.12.1",
-    "autoprefixer": "^10.2.5",
-    "gulp": "^4.0.2",
-    "gulp-postcss": "^9.0.0",
-    "gulp-rename": "^2.0.0",
-    "gulp-replace": "^1.1.3",
-    "gulp-sass": "^4.1.0",
-    "gulp-sourcemaps": "^3.0.0",
-    "gulp-svg-sprite": "^1.5.0",
-    "postcss": "^8.2.15",
-    "postcss-csso": "^5.0.1",
-    "sass": "^1.32.13",
-    "uswds": "^2.11.2",
-    "uswds-gulp": "github:uswds/uswds-gulp"
-  },
-  "dependencies": {
-    "concurrently": "^6.1.0",
-    "eleventy-plugin-sass": "^1.2.0",
-    "js-yaml": "^3.14.1"
-  }
+    "name": "cofa",
+    "version": "1.0.0",
+    "description": "frontend demo for cabild(e)o",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "dev": "concurrently \"gulp watch\" \"npx @11ty/eleventy --serve\"",
+        "serve": "npx @11ty/eleventy --serve",
+        "serve-incremental": "npx @11ty/eleventy --serve --incremental",
+        "build": "gulp build-sass && npx @11ty/eleventy",
+        "refresh": "npx @11ty/eleventy",
+        "clean": "rimraf _site/"
+    },
+    "author": "Andrew Solanto",
+    "license": "MIT",
+    "devDependencies": {
+        "@11ty/eleventy": "^0.12.1",
+        "autoprefixer": "^10.2.5",
+        "gulp": "^4.0.2",
+        "gulp-postcss": "^9.0.0",
+        "gulp-rename": "^2.0.0",
+        "gulp-replace": "^1.1.3",
+        "gulp-sass": "^4.1.0",
+        "gulp-sourcemaps": "^3.0.0",
+        "gulp-svg-sprite": "^1.5.0",
+        "postcss": "^8.2.15",
+        "postcss-csso": "^5.0.1",
+        "sass": "^1.32.13",
+        "uswds": "^2.11.2",
+        "uswds-gulp": "github:uswds/uswds-gulp"
+    },
+    "dependencies": {
+        "concurrently": "^6.1.0",
+        "eleventy-plugin-sass": "^1.2.0",
+        "js-yaml": "^3.14.1"
+    }
 }
