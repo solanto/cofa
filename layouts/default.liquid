@@ -16,7 +16,9 @@
         <div class="usa-nav-container">
             <div class="usa-navbar">
                 <div class="usa-logo" id="basic-logo">
-                    <em class="usa-logo__text"><a href="/" title="Home" aria-label="Home">Cabild(e)o</a></em>
+                    <em class="usa-logo__text">
+                        <a href="/" title="Inicio" aria-label="Inicio">{{ navigation.title }}</a>
+                    </em>
                 </div>
                 <button class="usa-menu-btn">Menú</button>
             </div>
@@ -24,23 +26,21 @@
                 <button class="usa-nav__close"><img src="/assets/uswds/img/usa-icons/close.svg" role="img"
                         alt="cerrar"></button>
                 <ul class="usa-nav__primary usa-accordion">
+                    {% for link in navigation.links %}
                     <li class="usa-nav__primary-item">
-                        <a class="usa-nav__link" href="javascript:void(0)"><span>Representantes</span></a>
+                        <a class="usa-nav__link" href="{{ link[1] }}">
+                            <span>{{ link[0] }}</span>
+                        </a>
                     </li>
-                    <li class="usa-nav__primary-item">
-                        <a class="usa-nav__link" href="javascript:void(0)"><span>Votaciones e iniciativas</span></a>
-                    </li>
-                    {% for link in navigation %}
-                        <li class="usa-nav__primary-item">
-                            <a class="usa-nav__link" href="{{ link.title }}"><span>{{ link.target }}</span></a>
-                        </li>
                     {% endfor %}
                 </ul>
+                {% if navigation.search %}
                 <form class="usa-search usa-search--small " role="search">
                     <label class="usa-sr-only" for="basic-search-field-small">Buscar</label>
                     <input class="usa-input" id="basic-search-field-small" type="search" name="search">
                     <button class="usa-button" type="submit"><span class="usa-sr-only">Buscar</span></button>
                 </form>
+                {% endif %}
             </nav>
         </div>
     </header>
