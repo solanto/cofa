@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <script src="assets/uswds/js/uswds.min.js"></script>
+    <script src="/assets/uswds/js/uswds.min.js"></script>
     <a class="usa-skipnav" href="#contenido-principal">Saltar al contenido principal</a>
     <header class="usa-header usa-header--basic">
         <div class="usa-nav-container">
@@ -23,9 +23,11 @@
                 <button class="usa-menu-btn">Menú</button>
             </div>
             <nav aria-label="Navegación primaria" class="usa-nav">
-                <button class="usa-nav__close"><img src="/assets/uswds/img/usa-icons/close.svg" role="img"
-                        alt="cerrar"></button>
+                <button class="usa-nav__close">
+                    <img src="/assets/uswds/img/usa-icons/close.svg" role="img" alt="cerrar">
+                </button>
                 <ul class="usa-nav__primary usa-accordion">
+
                     {% for link in navigation.links %}
                     <li class="usa-nav__primary-item">
                         <a class="usa-nav__link" href="{{ link[1] }}">
@@ -33,7 +35,9 @@
                         </a>
                     </li>
                     {% endfor %}
+
                 </ul>
+
                 {% if navigation.search %}
                 <form class="usa-search usa-search--small " role="search">
                     <label class="usa-sr-only" for="basic-search-field-small">Buscar</label>
@@ -41,6 +45,7 @@
                     <button class="usa-button" type="submit"><span class="usa-sr-only">Buscar</span></button>
                 </form>
                 {% endif %}
+
             </nav>
         </div>
     </header>
