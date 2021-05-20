@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{{ title }}</title>
+    <script src="/assets/uswds/js/uswds-init.min.js"></script>
+    <link rel="stylesheet" href="/assets/uswds/css/styles.css">
+</head>
+
+<body>
+    <script src="assets/uswds/js/uswds.min.js"></script>
+    <a class="usa-skipnav" href="#contenido-principal">Saltar al contenido principal</a>
+    <header class="usa-header usa-header--basic">
+        <div class="usa-nav-container">
+            <div class="usa-navbar">
+                <div class="usa-logo" id="basic-logo">
+                    <em class="usa-logo__text"><a href="/" title="Home" aria-label="Home">Cabild(e)o</a></em>
+                </div>
+                <button class="usa-menu-btn">Menú</button>
+            </div>
+            <nav aria-label="Navegación primaria" class="usa-nav">
+                <button class="usa-nav__close"><img src="/assets/uswds/img/usa-icons/close.svg" role="img"
+                        alt="cerrar"></button>
+                <ul class="usa-nav__primary usa-accordion">
+                    <li class="usa-nav__primary-item">
+                        <a class="usa-nav__link" href="javascript:void(0)"><span>Representantes</span></a>
+                    </li>
+                    <li class="usa-nav__primary-item">
+                        <a class="usa-nav__link" href="javascript:void(0)"><span>Votaciones e iniciativas</span></a>
+                    </li>
+                    {% for link in navigation %}
+                        <li class="usa-nav__primary-item">
+                            <a class="usa-nav__link" href="{{ link.title }}"><span>{{ link.target }}</span></a>
+                        </li>
+                    {% endfor %}
+                </ul>
+                <form class="usa-search usa-search--small " role="search">
+                    <label class="usa-sr-only" for="basic-search-field-small">Buscar</label>
+                    <input class="usa-input" id="basic-search-field-small" type="search" name="search">
+                    <button class="usa-button" type="submit"><span class="usa-sr-only">Buscar</span></button>
+                </form>
+            </nav>
+        </div>
+    </header>
+    <article id="contenido-principal">
+        {{ content }}
+    </article>
+</body>
+
+</html>
